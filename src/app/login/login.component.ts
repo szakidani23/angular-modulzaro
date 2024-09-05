@@ -11,4 +11,10 @@ export class LoginComponent {
   confirmPassword = '';
   fullname = '';
   isRegisterMode = false;
+
+  login() {}
+  register() {}
+  toggleRegisterMode() {
+    this.isRegisterMode = !this.isRegisterMode;
+  }
 }

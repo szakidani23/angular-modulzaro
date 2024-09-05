@@ -11,12 +11,35 @@
       <!-- password input -->
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" [(ngModel)]="password" placeholder="Enter password"
-          required>
+        <input type="password" class="form-control" name="password" id="password" [(ngModel)]="password"
+          placeholder="Enter password" required>
       </div>
 
       <!-- Register Mode -->
-      <div *ngIf="isRegisterMode"></div>
+      <div *ngIf="isRegisterMode">
+        <div class="form-group">
+          <!-- Password confirm -->
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
+            [(ngModel)]="confirmPassword" placeholder="Confirm Password" required>
+        </div>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" class="form-control" [(ngModel)]="fullname" name="fullname" id="fullname"
+            placeholder="Enter full name" required>
+        </div>
+      </div>
+      <!-- Login/Register BTN-->
+      <button class="btn btn-primary btn-block" (click)="isRegisterMode ? register() : login()">{{isRegisterMode ?
+        'Register': 'Login'}}
+      </button>
+      <!-- Register Mode Toggle -->
+      <div class="mt-3 text-center">
+        <a href="#" (click)="toggleRegisterMode()">
+          {{isRegisterMode ? 'Already have an account? Login' : 'Create a new account'}}
+        </a>
+      </div>
     </div>
   </div>
 </div>
