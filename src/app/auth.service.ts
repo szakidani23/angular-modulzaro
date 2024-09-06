@@ -30,6 +30,16 @@ export class AuthService {
       (error) => {
         console.log('API login failed.. checking localStorage.🧐');
         // LocalStorage check if Api login failed
+        const localUser = this.usersDB.find(
+          (u) => u.username === username && u.password === password
+        );
+
+        if (localUser) {
+          localStorage.setItem('loggedInUser', JSON.stringify(localUser));
+          console.log('Login successful with LocalStorage!👍');
+        } else {
+          console.log('Invalid username or password!😒');
+        }
       }
     );
   }
