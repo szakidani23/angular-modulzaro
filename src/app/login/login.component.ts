@@ -23,7 +23,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).then(
       (success) => {
         if (success) {
-          console.log('hi');
+          /// Do Nothing go further :)
         }
       },
       (error) => {
