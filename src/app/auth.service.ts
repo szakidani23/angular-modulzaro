@@ -20,7 +20,7 @@ export class AuthService {
     );
   }
 
-  login(username: string, password: string): void {
+  login(username: string, password: string) {
     this.apiLogin(username, password).subscribe(
       (response: any) => {
         // Api login success = user data LocalStorage save

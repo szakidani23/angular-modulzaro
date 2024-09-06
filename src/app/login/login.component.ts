@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,24 @@ export class LoginComponent {
   fullname = '';
   isRegisterMode = false;
 
-  login() {}
-  register() {}
+  constructor(private authService: AuthService) {}
+
   toggleRegisterMode() {
     this.isRegisterMode = !this.isRegisterMode;
   }
+
+  login() {
+    this.authService.login(this.username, this.password).then(
+      (success) => {
+        if (success) {
+          console.log('hi');
+        }
+      },
+      (error) => {
+        alert(error);
+      }
+    );
+  }
+
+  register() {}
 }
