@@ -22,6 +22,7 @@ export class AuthService {
 
   login(username: string, password: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
+      // First: Trying to login with API
       this.apiLogin(username, password).subscribe(
         (response: any) => {
           // Api login success = user data LocalStorage save
@@ -47,7 +48,18 @@ export class AuthService {
       );
     });
   }
+  // Registration
+  register(username: string, password: string, fullname: string) {
+    const userExists = this.usersDB.some((u) => u.username === username);
+    if (!userExists) {
+      const newUser = { username, password, fullname };
+      this.usersDB.push(newUser);
+      localStorage.setItem('usersDB', JSON.stringify(this.usersDB));
+      alert('Registration successful!👍');
+    } else {
+      alert('User already exists. Try it with another username! ');
+    }
+  }
 
-  register() {}
   logout() {}
 }
