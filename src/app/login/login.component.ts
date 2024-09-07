@@ -32,5 +32,19 @@ export class LoginComponent {
     );
   }
 
-  register() {}
+  register() {
+    if (this.password !== this.confirmPassword) {
+      alert('Passwords do not match!');
+      return;
+    }
+    if (this.username && this.password && this.fullname) {
+      this.authService.register(this.username, this.password, this.fullname);
+      // If registration is successful, then switch to login mode
+      this.isRegisterMode = false;
+      this.confirmPassword = '';
+      alert('Registration successful!🥳 You can log in!');
+    } else {
+      alert('Please fill in all fields!');
+    }
+  }
 }

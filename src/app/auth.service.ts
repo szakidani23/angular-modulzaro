@@ -48,6 +48,7 @@ export class AuthService {
       );
     });
   }
+
   // Registration
   register(username: string, password: string, fullname: string) {
     const userExists = this.usersDB.some((u) => u.username === username);
