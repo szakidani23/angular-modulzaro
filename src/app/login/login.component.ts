@@ -15,10 +15,12 @@ export class LoginComponent {
 
   constructor(private authService: AuthService) {}
 
+  // Decides if the Registration or Login form should appear
   toggleRegisterMode() {
     this.isRegisterMode = !this.isRegisterMode;
   }
 
+  // Login
   login() {
     this.authService.login(this.username, this.password).then(
       (success) => {
@@ -32,6 +34,7 @@ export class LoginComponent {
     );
   }
 
+  // Registration
   register() {
     if (this.password !== this.confirmPassword) {
       alert('Passwords do not match!');
