@@ -62,5 +62,15 @@ export class AuthService {
     }
   }
 
-  logout() {}
+  // User logging out
+  logout() {
+    localStorage.removeItem('loggedInUser');
+    alert('You have been logged out.');
+  }
+
+  // Checking is the user is logged in
+  isLoggedIn(): boolean {
+    const user = localStorage.getItem('loggedInUser');
+    return user !== null;
+  }
 }
