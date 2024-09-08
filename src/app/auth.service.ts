@@ -56,7 +56,6 @@ export class AuthService {
       const newUser = { username, password, fullname };
       this.usersDB.push(newUser);
       localStorage.setItem('usersDB', JSON.stringify(this.usersDB));
-      alert('Registration successful!👍');
     } else {
       alert('User already exists. Try it with another username! ');
     }

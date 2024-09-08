@@ -1,2 +1,8 @@
-<app-login></app-login>
-<app-home></app-home>
+<div *ngIf="!isLoggedIn(); else homeContent">
+  <app-login></app-login>
+</div>
+
+<ng-template #homeContent>
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+  <app-home></app-home>
+</ng-template>
