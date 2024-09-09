@@ -12,12 +12,15 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+    this.loadPosts();
+  }
+
+  /// Loading Posts via API
+  loadPosts() {
     this.http.get('https://dummyjson.com/posts').subscribe((data: any) => {
       this.posts = data.posts;
     });
   }
-
-  loadPosts() {}
 
   /// Delete post locally
   deletePost(postId: number) {
