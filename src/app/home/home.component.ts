@@ -32,5 +32,11 @@ export class HomeComponent implements OnInit {
     this.selectedPost = { ...post };
   }
   /// Save post locally
-  savePost() {}
+  savePost(updatedPost: any) {
+    const postIndex = this.posts.findIndex((p) => p.id === updatedPost.id);
+    if (postIndex > -1) {
+      this.posts[postIndex] = updatedPost;
+    }
+    this.selectedPost = null;
+  }
 }
