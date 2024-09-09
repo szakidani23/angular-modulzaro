@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   posts: any[] = [];
+  selectedPost: any = null;
 
   constructor(private http: HttpClient) {}
 
@@ -27,7 +28,9 @@ export class HomeComponent implements OnInit {
     this.posts = this.posts.filter((post) => post.id !== postId);
   }
   /// Edit post locally
-  editPost(post: any) {}
+  editPost(post: any) {
+    this.selectedPost = { ...post };
+  }
   /// Save post locally
   savePost() {}
 }
