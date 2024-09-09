@@ -6,6 +6,8 @@
         <div class="card-body">
           <h5 class="card-title">{{post.title}}</h5>
           <p class="card-text">{{post.body}}</p>
+          <button class="btn btn-warning" (click)="editPost(post)">Edit</button>
+          <button class="btn btn-danger" (click)="deletePost(post.id)">Delete</button>
         </div>
       </div>
     </div>
