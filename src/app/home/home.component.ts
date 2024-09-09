@@ -20,7 +20,9 @@ export class HomeComponent implements OnInit {
   loadPosts() {}
 
   /// Delete post locally
-  deletePost(postId: number) {}
+  deletePost(postId: number) {
+    this.posts = this.posts.filter((post) => post.id !== postId);
+  }
   /// Edit post locally
   editPost(post: any) {}
   /// Save post locally
