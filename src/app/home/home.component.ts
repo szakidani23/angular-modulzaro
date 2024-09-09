@@ -25,6 +25,12 @@ export class HomeComponent implements OnInit {
 
   /// Edit post locally
   editPost(post: any) {
+    // scroll to top when clicked
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
     this.selectedPost = { ...post };
   }
   /// Save post locally
