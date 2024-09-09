@@ -1,16 +1,16 @@
 <div class="container mt-5">
   <div class="card">
     <div class="card-body">
-      <h3 class="card-title text-center">{{isRegisterMode ? 'Register' : 'Login'}}</h3>
+      <h3 class="card-title text-center display-2">{{isRegisterMode ? 'Register' : 'Login'}}</h3>
       <!-- username input -->
       <div class="form-group">
-        <label for="username">Username</label>
+        <label class="my-2" for="username">Username</label>
         <input type="text" class="form-control" name="username" id="username" [(ngModel)]="username"
           placeholder="Enter username" required>
       </div>
       <!-- password input -->
       <div class="form-group">
-        <label for="password">Password</label>
+        <label class="my-2" for="password">Password</label>
         <input type="password" class="form-control" name="password" id="password" [(ngModel)]="password"
           placeholder="Enter password" required>
       </div>
@@ -19,19 +19,20 @@
       <div *ngIf="isRegisterMode">
         <div class="form-group">
           <!-- Password confirm -->
-          <label for="confirmPassword">Confirm Password</label>
+          <label class="my-2" for="confirmPassword">Confirm Password</label>
           <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
             [(ngModel)]="confirmPassword" placeholder="Confirm Password" required>
         </div>
         <!-- Full Name -->
         <div class="form-group">
-          <label for="fullname">Full Name</label>
+          <label class="my-2" for="fullname">Full Name</label>
           <input type="text" class="form-control" [(ngModel)]="fullname" name="fullname" id="fullname"
             placeholder="Enter full name" required>
         </div>
       </div>
       <!-- Login/Register BTN-->
-      <button class="btn btn-primary btn-block" (click)="isRegisterMode ? register() : login()">{{isRegisterMode ?
+      <button class="btn btn-primary btn-block mt-3 px-3 fs-5"
+        (click)="isRegisterMode ? register() : login()">{{isRegisterMode ?
         'Register': 'Login'}}
       </button>
       <!-- Register Mode Toggle -->

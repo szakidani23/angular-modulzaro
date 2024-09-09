@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Posts</h2>
+  <h2 class="display-1 mb-4">Posts</h2>
 
   <!-- Edit Post Only visible if selected-->
   <app-post-editor *ngIf="selectedPost" [post]="selectedPost" (savePost)="savePost($event)"></app-post-editor>
@@ -7,13 +7,19 @@
 
   <!-- POSTS -->
   <div class="row">
-    <div class="col-md-4">
-      <div class="card mb-4" *ngFor="let post of posts">
+    <div class="col">
+      <div class="card mb-4 d-flex flex-column flex-md-row justify-content-center align-items-center px-5"
+        *ngFor="let post of posts">
         <div class="card-body">
-          <h5 class="card-title">{{post.title}}</h5>
-          <p class="card-text">{{post.body}}</p>
-          <button class="btn btn-warning" (click)="editPost(post)">Edit</button>
-          <button class="btn btn-danger" (click)="deletePost(post.id)">Delete</button>
+          <h5 class="card-title fs-3">{{post.title}}</h5>
+          <p class="card-text my-3 col-12 col-lg-9">{{post.body}}</p>
+          <button class="btn btn-warning me-3 px-3" (click)="editPost(post)">Edit
+            <i class="bi bi-pencil-fill"></i></button>
+          <button class="btn btn-danger px-3" (click)="deletePost(post.id)">Delete
+            <i class="bi bi-trash-fill"></i></button>
+        </div>
+        <div class="cardImg">
+          <img class="my-3 rounded" src="https://picsum.photos/300" alt="">
         </div>
       </div>
     </div>

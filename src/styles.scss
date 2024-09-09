@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  min-height: 100vh;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(100, 43, 115, 1) 0%,
+    rgba(4, 0, 4, 1) 90%
+  );
+  color: #f3f3f3 !important;
+}
