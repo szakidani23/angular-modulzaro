@@ -16,4 +16,13 @@ export class HomeComponent implements OnInit {
       this.posts = data.posts;
     });
   }
+
+  loadPosts() {}
+
+  /// Delete post locally
+  deletePost(postId: number) {}
+  /// Edit post locally
+  editPost(post: any) {}
+  /// Save post locally
+  savePost() {}
 }
